@@ -1,10 +1,20 @@
+import itertools
+from fastapi import Form
 from pydantic import BaseModel
-from typing import List
+from typing import List, Optional
+
+
+id_counter = itertools.count(start=1)
 
 
 class Todo(BaseModel):
-    id: int
+    id: Optional[int]
     item: str
+
+    @classmethod
+    def as_form(cls, item: str = Form(...)):
+        return cls(id=next(id_counter), item=item)
+
 
     class Config:
         json_schema_extra = {
