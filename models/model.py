@@ -15,35 +15,23 @@ class Todo(BaseModel):
     def as_form(cls, item: str = Form(...)):
         return cls(id=next(id_counter), item=item)
 
-
     class Config:
-        json_schema_extra = {
-            'Example': {
-                'id': 1,
-                'item': 'Example schema'
-            }
-        }
+        json_schema_extra = {"Example": {"id": 1, "item": "Example schema"}}
 
 
 class TodoItem(BaseModel):
     item: str
 
     class Config:
-        json_schema_extra = {'Example': {'item': 'example'}}
+        json_schema_extra = {"Example": {"item": "example"}}
 
 
 class TodoItems(BaseModel):
     todos: List[TodoItem]
 
     class Config:
-        json_schema_extra = {"example": {"todos":
-            [
-                {
-                    "item": "Example schema 1!"
-                },
-                {
-                    "item": "Example schema 2!"
-                }
-            ]
-        }
+        json_schema_extra = {
+            "example": {
+                "todos": [{"item": "Example schema 1!"}, {"item": "Example schema 2!"}]
+            }
         }

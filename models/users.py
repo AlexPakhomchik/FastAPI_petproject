@@ -10,10 +10,10 @@ class User(BaseModel):
 
     class Config:
         json_schema_extra: dict = {
-            'example': {
-                'email': 'fastapi@packt.com',
-                'password': 'strong',
-                'events': [],
+            "example": {
+                "email": "fastapi@packt.com",
+                "password": "strong",
+                "events": [],
             }
         }
 
@@ -23,8 +23,5 @@ class UserSignIn(BaseModel):
     password: str
 
     json_schema_extra: dict = {
-        'example': {
-            'email': 'fastapi@packt.com',
-            'password': 'strong'
-        }
+        "example": {"email": "fastapi@packt.com", "password": "strong"}
     }

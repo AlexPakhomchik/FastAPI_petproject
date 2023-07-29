@@ -13,15 +13,15 @@ class Event(SQLModel, table=True):
     class Config:
         arbitrary_types_allowed = True
         json_schema_extra = {
-            'example': {
-                'title': 'FastAPI Book Launch',
-                'image': 'https://linktoimage.com/image.png', 'description': 'We will be discussing the contents of '
-                                                                             'the FastAPI book in this event.Ensure '
-                                                                             'to come with your own copy to '
-                                                                             'win gifts!',
-                'tags': ['python', 'fastapi', 'book',
-                         'launch'],
-                'location': 'Google Meet'
+            "example": {
+                "title": "FastAPI Book Launch",
+                "image": "https://linktoimage.com/image.png",
+                "description": "We will be discussing the contents of "
+                "the FastAPI book in this event.Ensure "
+                "to come with your own copy to "
+                "win gifts!",
+                "tags": ["python", "fastapi", "book", "launch"],
+                "location": "Google Meet",
             }
         }
 
@@ -39,9 +39,8 @@ class EventUpdate(SQLModel):
                 "title": "FastAPI Book Launch",
                 "image": "https://linktomyimage.com/image.png",
                 "description": "We will be discussing the contents of the FastAPI book in this event."
-                               "Ensure to come with yourown copy to win gifts!",
-                "tags": ["python", "fastapi", "book",
-                         "launch"],
-                "location": "Google Meet"
+                "Ensure to come with yourown copy to win gifts!",
+                "tags": ["python", "fastapi", "book", "launch"],
+                "location": "Google Meet",
             }
         }
